@@ -1,0 +1,13 @@
+{
+    "Statement": [
+        {
+            "Action": "sts:AssumeRole",
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:iam::894126404273:role/CrossAccountCodeArtirfact"
+            ],
+            "Sid": "AllowToAccessPuraVidaCodeArtifact"
+        }
+    ],
+    "Version": "2012-10-17"
+}

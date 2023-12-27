@@ -1,0 +1,14 @@
+{
+    "Statement": [
+        {
+            "Action": "sts:AssumeRole",
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:iam::746903912740:role/Cross-Account-IAM-User-Access",
+                "arn:aws:iam::431951423649:role/Cross-Account-IAM-User-Access"
+            ],
+            "Sid": "AllowUserToAssumeRole"
+        }
+    ],
+    "Version": "2012-10-17"
+}

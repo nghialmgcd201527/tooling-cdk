@@ -1,0 +1,20 @@
+#aws account
+account_id: "242324814550"
+application_account_id: "123"
+region: us-west-2
+environment: dev
+
+#vpc
+project_name: "DataHouse-Tooling-CDK-DEMO"
+vpc_cidr: "10.120.0.0/20"
+subnet_size: 24
+max_azs: 2
+
+stage: "dev"
+default_branch: "develop"
+build_branch: "develop"
+
+web_identity_repo: "web-identity"
+web_admin_repo: "web-admin"
+web_component_repo: "web-component"
+file_service_repo: "file-service"

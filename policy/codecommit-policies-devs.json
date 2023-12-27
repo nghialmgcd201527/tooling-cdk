@@ -1,0 +1,47 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "codecommit:Update*",
+                "codecommit:Merge*",
+                "codecommit:Post*",
+                "codecommit:Get*",
+                "codecommit:Test*",
+                "codecommit:BatchGet*",
+                "codecommit:GitPull",
+                "codecommit:Create*",
+                "codecommit:List*",
+                "codecommit:Describe*",
+                "codecommit:GitPush",
+                "codecommit:Put*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*",
+            "Sid": "AllowPull"
+        },
+        {
+            "Action": [
+                "codecommit:PutFile",
+                "codecommit:GitPush",
+                "codecommit:DeleteBranch",
+                "codecommit:Merge*"
+            ],
+            "Condition": {
+                "StringNotEquals": {
+                    "codecommit:References": [
+                        "refs/heads/main",
+                        "refs/heads/master",
+                        "refs/heads/uat",
+                        "refs/heads/develop",
+                        "refs/heads/qa",
+                        "refs/heads/test"
+                    ]
+                }
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:codecommit:us-west-2:671126836747:*",
+            "Sid": "AllowPush"
+        }
+    ],
+    "Version": "2012-10-17"
+}
